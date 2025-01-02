@@ -1,0 +1,1 @@
+## HouseIt - Buy or sell the properties at the best price possible .
