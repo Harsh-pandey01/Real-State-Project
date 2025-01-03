@@ -4,10 +4,7 @@
     box-sizing: border-box;
 }
 
-html,body{
-    width: 100%;
-    min-height: 100vh;
-}
+
 
 
 :root{
@@ -16,30 +13,229 @@ html,body{
  --primary-color : #ffffff ;
  --black-color : #111 ;
  --primary-blue : #001F41 ;
- --secondry-blue : #0F428F ;
+ --secondry-blue : #0f428ff1 ;
  --light-blue : #2278FF ;
  --primary-font-color : #000000 ;
  --white : #ffffff ;
+
+  /* Font Families */
+
+  --ff-roboto : "Roboto" ;
+  --ff-montserrat : "Montserrat";
+
+  /* Font size */
+
+  --fs-1: 0.5rem ;
+  --fs-2 : 0.6rem ;
+  --fs-3 : 0.7rem ;
+  --fs-4 : 0.8rem ;
+  --fs-5 : 1rem ;
+  --fs-6 : 1.2rem ;
+  --fs-7 : 1.4rem ;
+  --fs-8 : 1.6rem ;
+  --fs-9 : 1.8rem ;
+  --fs-10 : 2rem ;
+  
+  /* Font weights */
+
+  --fw-500 : 500 ;
+  --fw-600 : 600 ;
+  --fw-700 : 700 ;
+  --fw-800 : 800 ;
+  --fw-900 : 900 ;
+
+}
+
+html,body{
+    width: 100%;
+    min-height: 100vh;
+ 
+    font-family: var(--ff-montserrat);
+}
+
+li,a{
+    font-weight: var(--fw-500);
+    text-decoration: none;
+    color: var(--primary-color);
 }
 
 
 
+.container{
+    max-width: 1500px;
+    width: 100%;
+    margin: auto;
+    padding: 0 10px;
+}
+
+
+.logo-img{  
+    mix-blend-mode:multiply;
+    height: var(--fs-10);
+}
+
+header{
+    position: fixed;
+  
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0;
+ 
+}
+
+.nav-links{
+    list-style: none;
+    display: flex;
+   align-items: center;
+   gap: var(--fs-10);
+ 
+}
+
+
+.nav-btns-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap:var(--fs-5);
+}
+
+.nav-btns-wrapper button{
+   cursor: pointer;
+    padding: var(--fs-1) var(--fs-4);
+    border-radius: 100px;
+    font-weight: var(--fw-600);
+    color: var(--primary-color);
+    
+}
+
+
+.get-start-btn{
+    background-color: var(--light-blue);
+    border: 1px solid black;
+}
+
+.login-btn{
+    background-color: transparent;
+    border: none;
+    
+}
 
 
 
+/* -------------------- Hero Section ------- */
+
+.hero-section{
+    background-image: linear-gradient(to right,
+    var(--primary-blue),
+    var(--secondry-blue)),url("https://clipart-library.com/img1/1072100.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    position: relative;
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+}
+
+.hero-wrapper{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-image: url(./assets/house-png.png);
+    background-position: right ;
+   
+    background-repeat: no-repeat;
+    background-size: 750px;
+}
+
+.hero-content{
+    display: flex;
+    z-index: 10;
+    gap: 1rem;
+    flex-direction: column;
+}
+
+.hero-header{
+  font-size: 3rem;
+  max-width: 600px;
+  width: 100%;
+  font-family: var(--ff-roboto);
+}
+
+.hero-desc{
+    max-width: 600px;
+    width: 100%; 
+    font-size: var(--fs-5);
+    font-weight: 400;
+    opacity: 0.8;
+    line-height: 1.5;
+    font-family: var(--ff-montserrat);
+}
 
 
+.hero-search-box-wrapper{
+    display: grid;
+    grid-template-columns: 20% 30% 30% 20%;
+    padding: 1rem;
+    background-color: var(--white);
+    border-radius: 20px;
+    color: var(--black-color);
+    width: 700px;
+
+    max-width: 100%;
+}
+
+.search-item{
+display: flex;
+justify-content: space-between;
+ padding: 0 10px;
+ border-right: 2px solid rgb(199, 199, 199);
+}
+
+.search-item:nth-child(3){
+    border-right: none;
+}
 
 
+.search-label{
+    font-weight: var(--fw-500);
+    margin-bottom: 0.3rem;
+}
 
+i{
+    color: var(--light-blue);
+}
 
-
-
-
-
-
-
-
-
-
-
+input , .want-to{
+    flex: 1;
+    width: 100%;
+    outline: none;
+    border: none;
+}
+select {
+	appearance: none;
+    color: rgb(82, 82, 82);
+    font-weight: 500;
+}
+.submit-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    border: none;
+    background-color: var(--light-blue);
+    color: white;
+    cursor: pointer;
+}
+.submit-btn i{
+    color: var(--white);
+}
